@@ -4,78 +4,126 @@
         <title>OhMyFood</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="./css/style.css">
+        <link rel="stylesheet" type="text/css" href="./public/css/styles.css">
         <script src="https://kit.fontawesome.com/3302364883.js" crossorigin="anonymous"></script>
     </head>
-    <header>
-            <div>
-                <img src="./public/images/logo/ohmyfood.png" alt="logo OhMyFood">
-            </div>
-    </header>
-    <section>
-        <!-- recherche de restaurant-->
-        <div>
-            <div><!--icone de localisation--> Paris, Belleville</div>
-            <h1>Réserver le menu qui vous convient</h1>
-            <p>Découvrez des restaurants d'exception, selectionnés par nos soins.</p>
-            <button>Explorez nos restaurants</button>
+    <body>
+        <div class="block-page">
+            <header>
+                <img src="./public/images/logo/ohmyfood.png" alt="logo ohmyfood">
+            </header>
+            <main>
+                <div class="search">
+                    <i class="fas fa-map-marker-alt icon"></i><!--icone localisation-->
+                    <input type="text" placeholder="Paris, Belleville" class="text"/><!--recherche ville, quartier-->
+                </div>
+                <section class="local-header"><!--recherche de restaurant-->
+                    <h1>Réserver le menu qui vous convient</h1>
+                    <p>Découvrez des restaurants d'exception, selectionnés par nos soins.</p>
+                    <button type="submit">Explorez nos restaurants</button>
+                </section>
+                <section class="functioning"><!--Fonctionnement-->
+                    <h2>Fonctionnement</h2>
+                    <div class="all-box">
+                        <div class="functioning-box">
+                            <span class="functioning-nbr">1</span>
+                            <i class="fas fa-mobile-alt functioning-icons"></i>
+                            <p class="functioning-text">Choisissez un restaurant</p>
+                        </div>
+                        <div class="functioning-box">
+                            <span class="functioning-nbr">2</span>
+                            <i class="fas fa-list-ul functioning-icons"></i>
+                            <p class="functioning-text">Composez votre menu</p>
+                        </div>
+                        <div class="functioning-box">
+                            <span class="functioning-nbr">3</span>
+                            <i class="fas fa-store functioning-icons"></i>
+                            <p class="functioning-text">Dégustez au restaurant</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="restaurants"><!--Restaurants-->    
+                    <h2>Restaurants</h2>
+                    <div class="all-cards">
+                        <div class="cards"><!--box restaurant 1-->
+                            <a href="./pages/restau1.html">
+                                <img src="./public/images/restaurants/a remplacer.jpg" alt="restau1">
+                                <span class="new">Nouveau</span>
+                                <div class="cards-info">
+                                    <div class="cards-text">
+                                        <h3>Restau 1</h3>
+                                        <p>emplacement restau1</p>
+                                    </div>
+                                    <div class="cards-icons">
+                                        <i class="far fa-heart heart-icon"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="cards"><!--box restaurant 2-->
+                            <a href="./pages/restau2.html">
+                                <img src="./public/images/restaurants/a remplacer2.jpg" alt="restau2">
+                                <span class="new">Nouveau</span>
+                                <div class="cards-info">
+                                    <div class="cards-text">
+                                        <h3>Restau 2</h3>
+                                        <p>emplacement restau2</p>
+                                    </div>
+                                    <div class="cards-icons">
+                                        <i class="far fa-heart heart-icon"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="cards"><!--box restaurant 3-->
+                            <a href="./pages/restau3.html">
+                                <img src="./public/images/restaurants/a remplacer3.jpg" alt="restau3">
+                                <div class="cards-info">
+                                    <div class="cards-text">
+                                        <h3>Restau 3</h3>
+                                        <p>emplacement restau3</p>
+                                    </div>
+                                    <div class="cards-icons">
+                                        <i class="far fa-heart heart-icon"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="cards"><!--box restaurant 4-->
+                            <a href="./pages/restau4.html">
+                                <img src="./public/images/restaurants/a remplacer4.jpg" alt="restau4">
+                                <div class="cards-info">
+                                    <div class="cards-text">
+                                        <h3>Restau 4</h3>
+                                        <p>emplacement restau4</p>
+                                    </div>
+                                    <div class="cards-icons">
+                                        <i class="far fa-heart heart-icon"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <footer><!--pied de page-->
+                <h4>ohmyfood</h4>
+                <ul>
+                    <li>
+                        <i class="fas fa-utensils footer-icon"></i><!--icone de couverts-->
+                        <a href="#">Proposer un restaurant</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-hands-helping footer-icon"></i><!--icone poignée de mains-->
+                        <a href="#">Devenir partenaire</a>  
+                    </li>
+                    <li>
+                        <a href="#">Mentions légales</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </footer>
         </div>
-    </section>
-    <section>
-        <!--Fonctionnement-->
-        <h2>Fonctionnement</h2>
-        <div><!--icone tel-->Choisissez un restaurant</div>
-        <div><!--icone list-->Composez votre menu</div>
-        <div><!--icone stand-->Dégustez au restaurant</div>
-    </section>
-    <section>
-        <!--Restaurants-->
-        <h2>Restaurants</h2>
-        <div>
-            <a href="restau1.html"><!--box restaurant 1-->
-                <img src="./public/images/restaurants/a remplacer.jpg" alt="restau1">
-                <h3>Restau 1</h3>
-                <p>emplacement restau1</p>
-                <div><!--icone de coeur--></div>
-            </a>
-        </div>
-        <div>
-            <a href="restau2.html"><!--box restaurant 2-->
-                <img src="./public/images/restaurants/a remplacer2.jpg" alt="restau2">
-                <h3>Restau 2</h3>
-                <p>emplacement restau2</p>
-                <div><!--icone de coeur--></div>
-            </a>
-        </div>
-        <div>
-            <a href="restau3.html"><!--box restaurant 3-->
-                <img src="./public/images/restaurants/a remplacer3.jpg" alt="restau3">
-                <h3>Restau 3</h3>
-                <p>emplacement restau3</p>
-                <div><!--icone de coeur--></div>
-            </a>
-        </div>
-        <div>
-            <a href="restau4.html"><!--box restaurant 4-->
-                <img src="./public/images/restaurants/a remplacer4.jpg" alt="restau4">
-                <h3>Restau 4</h3>
-                <p>emplacement restau4</p>
-                <div><!--icone de coeur--></div>
-            </a>
-        </div>
-    </section>
-    <footer>
-        <!--pied de page-->
-        <div>
-            <div>
-                <!--logo a mettre en blanc-->
-                <img src="./public/images/logo/ohmyfood-white.png" alt="ohmyfood-white">
-            </div>
-            <ul>
-                <li><a href="#"><!--icone de couverts-->Proposer un restaurant</a></li>
-                <li><a href="#"><!--icone poignet de mains-->Devenir partenaire</a></li>
-                <li><a href="#">Mentions légales</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </div>
-    </footer>
+    </body>
