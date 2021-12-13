@@ -102,7 +102,7 @@ footer a {
   justify-content: center;
   align-items: baseline;
   flex-wrap: unset;
-  background-color: #c2c2c2;
+  background-color: #EAEAEA;
   padding: 10px;
 }
 .search .icon {
@@ -111,7 +111,7 @@ footer a {
 }
 .search .text {
   border: none;
-  background-color: #c2c2c2;
+  background-color: #EAEAEA;
   font-weight: 700;
   font-size: 1em;
   width: 130px;
@@ -125,7 +125,7 @@ footer a {
 
 .local-header {
   padding: 30px 40px;
-  background-color: #EAEAEA;
+  background-color: #F6F6F6;
   text-align: center;
 }
 .local-header h1 {
