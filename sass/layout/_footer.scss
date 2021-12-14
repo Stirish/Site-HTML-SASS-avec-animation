@@ -2,11 +2,6 @@ footer{
     background-color: $color-footer;
     color: #FFFFFF;
     padding: 10px 25px 20px;
-    h4{
-        font-family: "shrikhand";
-        font-size: 1.1em;
-        font-weight: normal;
-    }
     ul{
         list-style: none;
         font-size: 0.9em;
@@ -20,9 +15,5 @@ footer{
     .footer-icon{
         font-size: 0.8em;
         padding-right: 12px;
-    }
-    a{
-        text-decoration: none;
-        color: inherit;
     }
 }
