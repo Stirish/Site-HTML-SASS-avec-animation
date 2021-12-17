@@ -73,7 +73,7 @@ h3 {
 h4 {
   font-family: "shrikhand";
   font-size: 1.1em;
-  font-weight: normal;
+  padding-bottom: 15px;
 }
 
 button {
@@ -106,13 +106,12 @@ header img {
 footer {
   background-color: #353535;
   color: #FFFFFF;
-  padding: 10px 25px 20px;
+  padding: 25px 25px 40px;
 }
 footer ul {
   list-style: none;
   font-size: 0.9em;
   font-weight: 300;
-  padding-left: 5px;
 }
 footer li {
   display: flex;
@@ -271,6 +270,89 @@ footer .footer-icon {
 }
 .restaurants .heart-icon {
   font-size: 1.7em;
+}
+
+.pictures-menu {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+.menu {
+  background-color: #F6F6F6;
+  border-radius: 35px 35px 0px 0px;
+  margin-top: -50px;
+  position: relative;
+}
+
+.menu-heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: unset;
+  padding: 25px 25px 15px 18px;
+}
+.menu-heading h1 {
+  font-family: "shrikhand";
+  font-size: 1.6em;
+  letter-spacing: 1px;
+}
+
+.menu-content {
+  padding: 15px;
+}
+.menu-content h2 {
+  font-size: 1.1em;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+.menu-content .bottombar {
+  width: 40px;
+  height: 3px;
+  background-color: #99E2D0;
+  margin-left: 5px;
+  margin-bottom: 15px;
+}
+
+.menu-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+  flex-wrap: nowrap;
+  border-radius: 20px;
+  box-shadow: 0px 4px 7px 1px rgba(0, 0, 0, 0.1);
+  background-color: #FFFFFF;
+  height: 70px;
+  margin: 15px 0px;
+}
+.menu-card .price {
+  font-weight: 700;
+  margin: 15px 20px 15px 0px;
+}
+
+.menu-card-text {
+  margin: 15px 12px;
+  flex: 1;
+}
+.menu-card-text h3 {
+  font-size: 1em;
+  font-weight: 500;
+}
+.menu-card-text p {
+  font-size: 0.9em;
+  font-weight: 300;
+}
+
+.btn {
+  display: flex;
+  flex-direction: unset;
+  justify-content: center;
+  align-items: unset;
+  flex-wrap: unset;
 }
 
 /*# sourceMappingURL=styles.css.map */

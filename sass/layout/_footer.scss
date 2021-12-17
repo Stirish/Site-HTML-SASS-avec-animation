@@ -1,12 +1,11 @@
 footer{
     background-color: $color-footer;
     color: #FFFFFF;
-    padding: 10px 25px 20px;
+    padding: 25px 25px 40px;
     ul{
         list-style: none;
         font-size: 0.9em;
         font-weight: 300;
-        padding-left: 5px;
     }
     li{
         @include flexbox(row, unset, center, unset);
