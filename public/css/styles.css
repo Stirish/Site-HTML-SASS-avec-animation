@@ -89,6 +89,50 @@ button {
   box-shadow: 0px 4px 7px 1px rgba(0, 0, 0, 0.2);
 }
 
+.heart {
+  padding: 10px;
+}
+
+.heart-icon {
+  font-size: 1.7em;
+  cursor: pointer;
+  transform: scale(0.75, 0.85);
+}
+.heart-icon-empty {
+  position: absolute;
+  z-index: 2;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+.heart-icon-empty:active, .heart-icon-empty:hover {
+  opacity: 0;
+}
+.heart-icon-empty:active + .heart-icon-full::after, .heart-icon-empty:hover + .heart-icon-full::after {
+  transform: translateY(-100%);
+}
+.heart-icon-full {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(45deg, #FF79DA, #9356DC);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  overflow: hidden;
+}
+.heart-icon-full::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  bottom: -50%;
+  left: -50%;
+  height: 200%;
+  width: 200%;
+  background: #FFFFFF;
+  border-radius: 25%;
+  transform: translateY(0);
+  transition: transform 1.5s ease-out;
+}
+
 header {
   display: flex;
   flex-direction: row;
@@ -101,6 +145,11 @@ header {
 }
 header img {
   height: 28px;
+}
+header .header-icon {
+  font-size: 1.2em;
+  position: absolute;
+  left: 23px;
 }
 
 footer {
@@ -166,14 +215,16 @@ footer .footer-icon {
 .functioning {
   padding: 55px 21px;
 }
-.functioning .all-box {
+
+.all-box {
   display: flex;
   flex-direction: column;
   justify-content: unset;
   align-items: center;
   flex-wrap: unset;
 }
-.functioning .functioning-box {
+
+.functioning-box {
   display: flex;
   flex-direction: row;
   justify-content: unset;
@@ -185,8 +236,30 @@ footer .footer-icon {
   width: 100%;
   height: 72px;
   margin: 12px;
+  position: relative;
+  z-index: 1;
 }
-.functioning .functioning-nbr {
+.functioning-box:hover::after {
+  opacity: 1;
+}
+.functioning-box:hover .functioning-icons {
+  color: #9356DC;
+}
+.functioning-box::after {
+  content: "";
+  position: absolute;
+  background-color: #f2eafb;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 20px;
+  box-shadow: 0px 4px 7px 1px rgba(0, 0, 0, 0.1);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 300ms;
+}
+.functioning-box .functioning-nbr {
   width: 25px;
   height: 25px;
   background-color: #9356DC;
@@ -195,13 +268,13 @@ footer .footer-icon {
   text-align: center;
   line-height: 25px;
   position: absolute;
-  left: 10px;
+  left: -10px;
   font-size: 0.9em;
 }
-.functioning .functioning-icons {
+.functioning-box .functioning-icons {
   margin: 0px 20px 0px 35px;
 }
-.functioning .functioning-text {
+.functioning-box .functioning-text {
   font-weight: 700;
   margin: 0px 5px;
 }
@@ -268,9 +341,6 @@ footer .footer-icon {
 .restaurants .cards-icons {
   padding: 35px;
 }
-.restaurants .heart-icon {
-  font-size: 1.7em;
-}
 
 .pictures-menu {
   width: 100%;
@@ -301,6 +371,17 @@ footer .footer-icon {
 
 .menu-content {
   padding: 15px;
+  animation: menu-appears ease-in-out 800ms forwards;
+  opacity: 0;
+}
+.menu-content--1 {
+  animation-delay: 400ms;
+}
+.menu-content--2 {
+  animation-delay: 800ms;
+}
+.menu-content--3 {
+  animation-delay: 1200ms;
 }
 .menu-content h2 {
   font-size: 1.1em;
@@ -328,23 +409,56 @@ footer .footer-icon {
   background-color: #FFFFFF;
   height: 70px;
   margin: 15px 0px;
+  overflow: hidden;
+}
+.menu-card:active .menu-card-check, .menu-card:hover .menu-card-check {
+  width: 60px;
+  transform: translateX(0);
+}
+.menu-card:active .menu-card-icon, .menu-card:hover .menu-card-icon {
+  transform: rotate(1turn);
+  opacity: 1;
 }
 .menu-card .price {
   font-weight: 700;
   margin: 15px 20px 15px 0px;
 }
-
-.menu-card-text {
+.menu-card .menu-card-text {
   margin: 15px 12px;
   flex: 1;
+  overflow: hidden;
 }
-.menu-card-text h3 {
+.menu-card h3 {
   font-size: 1em;
   font-weight: 500;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
-.menu-card-text p {
+.menu-card p {
   font-size: 0.9em;
   font-weight: 300;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.menu-card .menu-card-check {
+  background-color: #99E2D0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: unset;
+  width: 0;
+  height: 100%;
+  transition: all 400ms ease-in-out;
+  transform: translateX(100%);
+}
+.menu-card .menu-card-icon {
+  color: #fff;
+  font-size: 20px;
+  transition: all 400ms 100ms ease-in-out;
+  opacity: 0;
 }
 
 .btn {
@@ -353,6 +467,16 @@ footer .footer-icon {
   justify-content: center;
   align-items: unset;
   flex-wrap: unset;
+}
+
+@keyframes menu-appears {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

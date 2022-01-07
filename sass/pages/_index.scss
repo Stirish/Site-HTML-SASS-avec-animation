@@ -1,3 +1,4 @@
+// RECHERCHE
 .search{
     @include flexbox(row, center, baseline, unset);
     background-color: $grey-search;
@@ -30,19 +31,44 @@
         margin: 6px;
     }
 }
+// FONCTIONNEMENT
 .functioning{
     padding: 55px 21px;
-    .all-box{
-        @include flexbox(column, unset, center, unset);
+}
+.all-box{
+    @include flexbox(column, unset, center, unset);
+}
+.functioning-box{
+    @include flexbox(row, unset, center, unset);
+    border-radius: 20px;
+    box-shadow: 0px 4px 7px 1px rgb(0, 0, 0, 10%);
+    background-color: $grey-dominant;
+    width: 100%;
+    height: 72px;
+    margin: 12px;
+    position: relative;
+    z-index: 1;
+    &:hover{
+        &::after{
+            opacity: 1;
+        }
+        .functioning-icons{
+            color: $color-primary;
+        }
     }
-    .functioning-box{
-        @include flexbox(row, unset, center, unset);
+    &::after{
+        content: "";
+        position: absolute;
+        background-color: lighten($color-primary, 35%);
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
         border-radius: 20px;
         box-shadow: 0px 4px 7px 1px rgb(0, 0, 0, 10%);
-        background-color: $grey-dominant;
-        width: 100%;
-        height: 72px;
-        margin: 12px;
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 300ms;
     }
     .functioning-nbr{
         width: 25px;
@@ -53,7 +79,7 @@
         text-align: center;
         line-height: 25px;
         position: absolute;
-        left: 10px;
+        left: -10px;
         font-size: 0.9em;
     }
     .functioning-icons{
@@ -64,6 +90,7 @@
         margin: 0px 5px;
     }
 }
+// RESTAURANTS
 .restaurants{
     background-color: $grey-dominant;
     padding: 55px 21px;
@@ -112,8 +139,5 @@
     }
     .cards-icons{
         padding: 35px;
-    }
-    .heart-icon{
-        font-size: 1.7em;
     }
 }

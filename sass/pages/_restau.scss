@@ -20,6 +20,13 @@
 }
 .menu-content {
     padding: 15px;
+    animation: menu-appears ease-in-out 800ms forwards;
+    opacity: 0;
+    @for $i from 1 through 3 { // COMPRIS LE SYSTEME DE BOUCLE MAIS TROP L'ECRIT
+        &--#{$i} {
+            animation-delay: 400ms * $i;
+        }
+    }
     h2{
         font-size: 1.1em;
         text-transform: uppercase;
@@ -42,23 +49,64 @@
     background-color: #FFFFFF;
     height: 70px;
     margin: 15px 0px;
+    overflow: hidden;
+    &:active .menu-card-check, &:hover .menu-card-check{
+        width: 60px;
+        transform: translateX(0);
+    }
+    &:active .menu-card-icon,  &:hover .menu-card-icon {
+        transform: rotate(1turn);
+        opacity:1;
+    }
     .price{
         font-weight: 700;
         margin: 15px 20px 15px 0px;
     }
-}
-.menu-card-text{
-    margin: 15px 12px;
-    flex: 1;
+    .menu-card-text{
+        margin: 15px 12px;
+        flex: 1;
+        overflow: hidden;
+    }
     h3{
         font-size: 1em;
         font-weight: 500;
+        text-overflow: ellipsis;
+        overflow: hidden; 
+        white-space: nowrap;
     }
     p{
         font-size: 0.9em;
         font-weight: 300;
+        text-overflow: ellipsis;
+        overflow: hidden; 
+        white-space: nowrap;
     }
+    .menu-card-check{ 
+        background-color: $color-tertiary;
+        @include flexbox(row, center, center, unset);
+        width: 0;
+        height: 100%;
+        transition: all 400ms ease-in-out;
+        transform: translateX(100%);
+    }
+    .menu-card-icon {
+        color: #fff;
+        font-size: 20px;
+        transition: all 400ms 100ms ease-in-out;
+        opacity:0;
+    } 
 }
 .btn{
     @include flexbox(unset, center, unset, unset);
+}
+@keyframes menu-appears{
+  0%
+  {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100%
+  {
+      opacity: 1;
+  }
 }
