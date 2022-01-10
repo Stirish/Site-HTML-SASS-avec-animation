@@ -40,3 +40,8 @@
         }
     }
 }
+.menu-heading {
+    .heart-icon-empty, .heart-icon-full::after  {
+        background: $grey-dominant;
+    }
+}

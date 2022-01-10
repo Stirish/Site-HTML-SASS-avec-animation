@@ -7,24 +7,24 @@
     background-color: $grey-dominant;
     border-radius: 35px 35px 0px 0px;
     margin-top: -50px;
-    position: relative; //pour que le contenu passe au dessus de l'image
-}
-.menu-heading {
-    @include flexbox(row, space-between, flex-start, unset);
-    padding: 25px 25px 15px 18px;
+    position: relative;
+    &-heading {
+        @include flexbox(row, space-between, flex-start, unset);
+        padding: 25px 25px 15px 18px;
+    }
     h1{
         font-family: "shrikhand";
         font-size: 1.6em;
         letter-spacing: 1px;
     }
-}
-.menu-content {
-    padding: 15px;
-    animation: menu-appears ease-in-out 800ms forwards;
-    opacity: 0;
-    @for $i from 1 through 3{
-        &--#{$i} {
-            animation-delay: 400ms * $i;
+    &-content{
+        padding: 15px;
+        animation: menu-appears ease-in-out 800ms forwards;
+        opacity: 0;
+        @for $i from 1 through 3{
+            &--#{$i} {
+                animation-delay: 400ms * $i;
+            }
         }
     }
     h2{
@@ -41,22 +41,22 @@
         margin-left: 5px;
         margin-bottom: 15px;
     }
-}
-.menu-card{
-    @include flexbox(row, flex-start, flex-end, nowrap);
-    border-radius: 20px;
-    box-shadow: 0px 4px 7px 1px rgb(0, 0, 0, 10%);
-    background-color: #FFFFFF;
-    height: 70px;
-    margin: 15px 0px;
-    overflow: hidden;
-    &:active .menu-card-check, &:hover .menu-card-check{
-        width: 60px;
-        transform: translateX(0);
-    }
-    &:active .menu-card-icon,  &:hover .menu-card-icon {
-        transform: rotate(1turn);
-        opacity:1;
+    &-card{
+        @include flexbox(row, flex-start, flex-end, nowrap);
+        border-radius: 20px;
+        box-shadow: 0px 4px 7px 1px rgb(0, 0, 0, 10%);
+        background-color: #FFFFFF;
+        height: 70px;
+        margin: 15px 0px;
+        overflow: hidden;
+        &:active .menu-card-check, &:hover .menu-card-check{
+            width: 60px;
+            transform: translateX(0);
+        }
+        &:active .menu-card-icon,  &:hover .menu-card-icon {
+            transform: rotate(1turn);
+            opacity:1;
+        }
     }
     .price{
         font-weight: 700;
@@ -90,7 +90,7 @@
         transform: translateX(100%);
     }
     .menu-card-icon {
-        color: #fff;
+        color: #FFFFFF;
         font-size: 20px;
         transition: all 400ms 100ms ease-in-out;
         opacity:0;

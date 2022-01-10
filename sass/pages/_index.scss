@@ -34,43 +34,49 @@
 // FONCTIONNEMENT
 .functioning{
     padding: 55px 21px;
-}
-.all-box{
+    @include tablet{
+        @include flexbox(column, unset, center, unset);
+    }
+    &-box{
     @include flexbox(column, unset, center, unset);
-}
-.functioning-box{
-    @include flexbox(row, unset, center, unset);
-    border-radius: 20px;
-    box-shadow: 0px 4px 7px 1px rgb(0, 0, 0, 10%);
-    background-color: $grey-dominant;
-    width: 100%;
-    height: 72px;
-    margin: 12px;
-    position: relative;
-    z-index: 1;
-    &:hover{
-        &::after{
-            opacity: 1;
-        }
-        .functioning-icons{
-            color: $color-primary;
+    @include tablet{
+        @include flexbox(row, unset, center, unset);
         }
     }
-    &::after{
-        content: "";
-        position: absolute;
-        background-color: lighten($color-primary, 35%);
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
+    &-case{
+        @include flexbox(row, unset, center, unset);
         border-radius: 20px;
         box-shadow: 0px 4px 7px 1px rgb(0, 0, 0, 10%);
-        z-index: -1;
-        opacity: 0;
-        transition: opacity 300ms;
+        background-color: $grey-dominant;
+        width: 100%;
+        height: 72px;
+        margin: 12px;
+        position: relative;
+        z-index: 1;
+        &:hover{
+            &::after{
+                opacity: 1;
+            }
+            .functioning-icons{
+                color: $color-primary;
+            }
+        }
+        &::after{
+            content: "";
+            position: absolute;
+            background-color: lighten($color-primary, 35%);
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            border-radius: 20px;
+            box-shadow: 0px 4px 7px 1px rgb(0, 0, 0, 10%);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 300ms;
+        }
     }
-    .functioning-nbr{
+    &-nbr{
         width: 25px;
         height: 25px;
         background-color: $color-primary;
@@ -82,10 +88,10 @@
         left: -10px;
         font-size: 0.9em;
     }
-    .functioning-icons{
+    &-icons{
         margin: 0px 20px 0px 35px;
     }
-    .functioning-text{
+    &-text{
         font-weight: 700;
         margin: 0px 5px;
     }
@@ -94,8 +100,14 @@
 .restaurants{
     background-color: $grey-dominant;
     padding: 55px 21px;
-    .all-cards{
+    @include tablet{
+        @include flexbox(column, unset, center, unset);
+    }
+    .allcards{
         @include flexbox(column, unset, unset, unset);
+        @include tablet{
+            @include flexbox(row, space-evenly, unset, wrap);
+        }
     }
     .cards{
         border-radius: 20px;
@@ -103,7 +115,13 @@
         background-color: #FFFFFF;
         flex: auto;
         position: relative;
-        margin: 9px 0px;  
+        margin: 9px 0px;
+        @include tablet{
+            flex: none;
+        }
+        @include desktop{
+            margin: 9px 50px;
+        }
     }
     .cards img{
         object-fit: cover;

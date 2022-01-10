@@ -11,7 +11,7 @@ footer{
         @include flexbox(row, unset, center, unset);
         padding: 4px 0px;
     }
-    .footer-icon{
+    &-icon{
         font-size: 0.8em;
         padding-right: 12px;
     }
