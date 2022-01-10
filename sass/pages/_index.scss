@@ -128,6 +128,7 @@
         width: 100%;
         height: 175px;
         border-radius: 20px 20px 0px 0px;
+        object-position: 100% 63%;
     }
      .cards .new{
         @include flexbox(row, center, center, unset); 
