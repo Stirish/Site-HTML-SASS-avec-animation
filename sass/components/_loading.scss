@@ -1,0 +1,61 @@
+.loading{
+    position: fixed;
+    z-index: 3; 
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: $grey-dominant;
+    @include flexbox(column, center, center, unset);
+    animation: fadeout 5s forwards;
+    &-img{
+        width: 400px;
+        position: relative;
+        margin-top: -100px;
+    }
+    &-ball{
+        @for $i from 1 through 3{
+            &--#{$i} {
+                @if $i == 1{
+                    background-color: $color-primary;
+                }
+                @if $i == 2{
+                    background-color: $color-secondary;
+                }
+                @if $i == 3{
+                    background-color: $color-tertiary;
+                }
+            animation: ball 3s ease 0s 1 normal forwards;
+            position: absolute;
+            bottom: 325px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            opacity: 0;
+            animation-delay: 400ms * $i;
+            margin-left: calc(0px + ($i - 2) * -55px);
+            }
+        }
+    }     
+}
+@keyframes ball{
+    0% {
+        opacity: 0;
+        transform: translateX(-250px);
+      }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+  }
+@keyframes fadeout{ 
+   80%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        visibility: hidden;
+    }
+}

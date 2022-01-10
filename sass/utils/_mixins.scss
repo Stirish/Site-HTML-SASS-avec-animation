@@ -5,3 +5,14 @@
     align-items: $align;
     flex-wrap: $wrap;
 }
+@mixin tablet { 
+    @media all and (min-width: map-get($breakpoints, tablet)){
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media all and (min-width: map-get($breakpoints, desktop)){
+        @content;
+    }
+}

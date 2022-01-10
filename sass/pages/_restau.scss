@@ -22,7 +22,7 @@
     padding: 15px;
     animation: menu-appears ease-in-out 800ms forwards;
     opacity: 0;
-    @for $i from 1 through 3 { // COMPRIS LE SYSTEME DE BOUCLE MAIS TROP L'ECRIT
+    @for $i from 1 through 3{
         &--#{$i} {
             animation-delay: 400ms * $i;
         }
