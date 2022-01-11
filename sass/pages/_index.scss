@@ -75,6 +75,9 @@
             opacity: 0;
             transition: opacity 300ms;
         }
+        @include desktop{
+            cursor: pointer;
+        }
     }
     &-nbr{
         width: 25px;
@@ -90,6 +93,7 @@
     }
     &-icons{
         margin: 0px 20px 0px 35px;
+        color: $icons-color;
     }
     &-text{
         font-weight: 700;

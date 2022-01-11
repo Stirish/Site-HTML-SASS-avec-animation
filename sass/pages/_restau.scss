@@ -57,6 +57,9 @@
             transform: rotate(1turn);
             opacity:1;
         }
+        @include desktop{
+            cursor: pointer;
+        }
     }
     .price{
         font-weight: 700;
@@ -69,7 +72,7 @@
     }
     h3{
         font-size: 1em;
-        font-weight: 500;
+        font-weight: bold;
         text-overflow: ellipsis;
         overflow: hidden; 
         white-space: nowrap;
@@ -94,10 +97,13 @@
         font-size: 20px;
         transition: all 400ms 100ms ease-in-out;
         opacity:0;
-    } 
+    }
 }
 .btn{
     @include flexbox(unset, center, unset, unset);
+    padding-bottom: 35px;
+    margin-top: -15px;
+    
 }
 @keyframes menu-appears{
   0%

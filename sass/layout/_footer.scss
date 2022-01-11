@@ -2,6 +2,8 @@ footer{
     background-color: $color-footer;
     color: #FFFFFF;
     padding: 25px 25px 40px;
+    position: relative;
+    
     ul{
         list-style: none;
         font-size: 0.9em;
@@ -11,8 +13,18 @@ footer{
         @include flexbox(row, unset, center, unset);
         padding: 4px 0px;
     }
-    &-icon{
-        font-size: 0.8em;
-        padding-right: 12px;
+    .footer-icon{
+    font-size: 0.8em;
+    }
+    .couvert{
+        position: absolute;
+        bottom: 130px;
+    }
+    .handshake{
+        position: absolute;
+        bottom: 100px;
+    }
+    .footer-offset{
+        margin-left: 25px;
     }
 }
